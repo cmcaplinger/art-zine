@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import "reset";
+@import "grid";
+
+#top {
+  height: 10vh;
+  background-color: black;
+  font-family: 'Carter One', cursive;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  animation: color-change 10s infinite;
+  @keyframes color-change {
+    0% { color: rgb(70, 192, 145); }
+    25% { color: rgb(179, 87, 207); }
+    50% { color: rgb(233, 202, 63); }
+    100% { color: rgb(70, 192, 145); }
+  }
+}
+
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: rgb(166, 255, 0);
+  color: black;
+}
+
+body {
+  #app {
+    font-size: 16px;
+    font-family: 'Share Tech Mono', monospace;
+  }
+  
+  .HomePage {
+    display: flex;
+  }
+  
+  .AboutPage {
+    display: flex;
+  }
+  
+  .ContactPage{
+    display: flex;
+  }
+  
+  .AppPage {
+    display: flex;
+  }
+  
+}
+
