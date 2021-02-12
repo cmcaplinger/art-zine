@@ -32,10 +32,12 @@ body {
   #app {
     font-size: 16px;
     font-family: 'Share Tech Mono', monospace;
+    height: 100vh;
+
   }
-  
   .HomePage {
     display: flex;
+
   }
   
   .AboutPage {
@@ -48,7 +50,22 @@ body {
   
   .AppPage {
     display: flex;
+
+
   }
   
 }
+
+#footer {
+  height: 10vh;
+  background-color: black;
+}
+
+// animation: color-change 10s infinite;
+// @keyframes color-change {
+//   0% { background-color: rgb(70, 192, 145); }
+//   25% { background-color: rgb(179, 87, 207); }
+//   50% { background-color: rgb(233, 202, 63); }
+//   100% { background-color: rgb(70, 192, 145); }
+// }
 

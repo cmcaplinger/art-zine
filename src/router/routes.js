@@ -3,12 +3,13 @@ import App from '../pages/App';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Article from '../pages/Article';
+import Submission from '../pages/Submission';
 
 const routes = [
 	{
 		Component: Article,
 		key: 'articles',
-		path: 'articles/'
+		path: '/articles'
 	},
 	{
 		Component: About,
@@ -19,6 +20,11 @@ const routes = [
 		Component: Contact,
 		key: 'contact',
 		path: '/contact'
+	},
+	{
+		Component: Submission,
+		key: 'submissions',
+		path: '/submissions'
 	},
 	{
 		Component: App,
