@@ -2,7 +2,6 @@ const Article = require('../models/article');
 const express = require('express');
 const articleRouter = express.Router();
 
-//INDUCES - DON'T NEED NEW, EDIT
 
 //Create
 articleRouter.post('/', async (req, res) => {

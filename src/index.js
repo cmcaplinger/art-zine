@@ -1,23 +1,14 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import routes from './router/routes';
-const AppRouter = props => {
-	return (
-		<Router>
-			<NavBar routes={routes} />
-			<Link to="/test"> Test Anchor</Link>
-			<Switch>
-				{routes.map(({ Component, key, path }) => (
-					<Route
-						key={key}
-						path={path}
-						component={props => <Component page={key} {...props} />}
-					></Route>
-				))}
-			</Switch>
-		</Router>
-	);
-};
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/scss/bootstrap.scss';
+import App from './pages/App';
 
-export default AppRouter;
+const app = document.getElementById('app');
+
+ReactDOM.render(
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>,
+	app
+);

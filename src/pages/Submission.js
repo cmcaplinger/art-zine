@@ -5,7 +5,7 @@ export default function App(props) {
 	const [articles, setArticles] = useState([]);
 	const titleInput = useRef(null);
 	const bodyInput = useRef(null);
-    const authorInput = useRef(null);
+	const authorInput = useRef(null);
 
 	useEffect(() => {
 		//Immediately Invoked Function Expression  - IFFE!
@@ -24,7 +24,7 @@ export default function App(props) {
 		e.preventDefault();
 		const titleValue = titleInput.current.value;
 		const bodyValue = bodyInput.current.value;
-        const authorValue = authorInput.current.value;
+		const authorValue = authorInput.current.value;
 		try {
 			const response = await fetch('/api/articles', {
 				method: 'POST',
@@ -33,7 +33,7 @@ export default function App(props) {
 				},
 				body: JSON.stringify({
 					title: titleValue,
-                    author: authorValue,
+					author: authorValue,
 					body: bodyValue
 				})
 			});
@@ -45,7 +45,7 @@ export default function App(props) {
 	};
 
 	return (
-		<div className="AppPage">
+		<div className="SubmissionPage">
 			{articles.map(article => {
 				return (
 					<div key={article._id}>
@@ -64,7 +64,10 @@ export default function App(props) {
 					Title: <input type="text" ref={titleInput} />
 				</label>
 				<label>
-					Body: <input type="text" ref={bodyInput} />
+					Author: <input type="text" ref={authorInput} />
+				</label>
+				<label>
+					Body: <input type="text" id="submission" ref={bodyInput} />
 				</label>
 				<input type="submit" value="Submit Article" />
 			</form>

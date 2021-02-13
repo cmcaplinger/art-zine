@@ -4,6 +4,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Article from '../pages/Article';
 import Submission from '../pages/Submission';
+import Home from '../pages/Home';
 
 const routes = [
 	{
@@ -27,7 +28,7 @@ const routes = [
 		path: '/submissions'
 	},
 	{
-		Component: App,
+		Component: Home,
 		key: 'home',
 		path: '/'
 	}
