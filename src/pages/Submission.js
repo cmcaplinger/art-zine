@@ -1,24 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
 
-export default function App(props) {
+export default function Submission(props) {
 	const [articles, setArticles] = useState([]);
 	const titleInput = useRef(null);
 	const bodyInput = useRef(null);
 	const authorInput = useRef(null);
-
-	useEffect(() => {
-		//Immediately Invoked Function Expression  - IFFE!
-		(async () => {
-			try {
-				const response = await fetch('/api/articles');
-				const data = await response.json();
-				setArticles(data);
-			} catch (error) {
-				console.error(error);
-			}
-		})();
-	}, []);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
@@ -46,29 +32,21 @@ export default function App(props) {
 
 	return (
 		<div className="SubmissionPage">
-			{articles.map(article => {
-				return (
-					<div key={article._id}>
-						<Link to={`/${article._id}`}>
-							<h2>{article.title}</h2>
-						</Link>
-						<p>{article.body}</p>
-					</div>
-				);
-			})}
 			<form
 				style={{ display: 'flex', flexDirection: 'column' }}
 				onSubmit={handleSubmit}
 			>
-				<label>
-					Title: <input type="text" ref={titleInput} />
-				</label>
-				<label>
-					Author: <input type="text" ref={authorInput} />
-				</label>
-				<label>
-					Body: <input type="text" id="submission" ref={bodyInput} />
-				</label>
+				Title: <input type="text" ref={titleInput} /> <br />
+				Author: <input type="text" ref={authorInput} /> <br />
+				Body:{' '}
+				<textarea
+					rows="2"
+					cols="20"
+					wrap="hard"
+					id="submission"
+					ref={bodyInput}
+				></textarea>
+				<br />
 				<input type="submit" value="Submit Article" />
 			</form>
 		</div>

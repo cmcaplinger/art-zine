@@ -6,6 +6,7 @@ import About from './About';
 import Top from '../components/Top';
 import Footer from '../components/Footer';
 import Submission from './Submission';
+import Contributor from './Contributor';
 
 export default function App(props) {
 	return (
@@ -16,6 +17,7 @@ export default function App(props) {
 				<Route exact path="/contact" component={Contact} />
 				<Route exact path="/about" component={About} />
 				<Route exact path="/submissions" component={Submission} />
+				<Route exact path="/contributors" component={Contributor} />
 			</Switch>
 			<Footer />
 		</div>

@@ -2,15 +2,16 @@ import React from 'react';
 import App from '../pages/App';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-import Article from '../pages/Article';
+import ShowArticle from '../pages/ShowArticle';
 import Submission from '../pages/Submission';
 import Home from '../pages/Home';
+import Contributor from '../pages/Contributor';
 
 const routes = [
 	{
-		Component: Article,
-		key: 'articles',
-		path: '/articles'
+		Component: ShowArticle,
+		key: 'ShowArticle',
+		path: '/:id'
 	},
 	{
 		Component: About,
@@ -28,12 +29,16 @@ const routes = [
 		path: '/submissions'
 	},
 	{
+		Component: Contributor,
+		key: 'contributors',
+		path: '/contributors'
+	},
+	{
 		Component: Home,
 		key: 'home',
 		path: '/'
 	}
 
-	// insert article and author here
 ];
 
 export default routes;

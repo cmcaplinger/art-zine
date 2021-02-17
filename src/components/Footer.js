@@ -6,6 +6,7 @@ const Footer = props => {
 		<div className="Footer">
 			<div id="NavFooter">
 				<Link to="/submissions">submission</Link>
+				<Link to="/contributors">contributors</Link>
 				<Link to="/about">about</Link>
 				<Link to="/contact">contact</Link>
 			</div>

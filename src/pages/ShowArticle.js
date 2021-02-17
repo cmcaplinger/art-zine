@@ -25,6 +25,9 @@ export default function Article(props) {
 				<button>Agree</button>
 				<button>Disagree</button>
 			</Link>
+			<Link to={`/${article._id}/edit`}>
+				<button>Update this Article</button>
+			</Link>
 		</div>
 	);
 }
