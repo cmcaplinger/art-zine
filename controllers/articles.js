@@ -30,7 +30,6 @@ articleRouter.get('/', async (req, res) => {
 articleRouter.get('/:id', async (req, res) => {
 	try {
 		const foundArticle = await Article.findById(req.params.id);
-		// await foundArticle.execPopulate('authors')
 
 		res.status(200).json(foundArticle);
 	} catch (error) {
@@ -40,7 +39,7 @@ articleRouter.get('/:id', async (req, res) => {
 
 //Destroy
 
-articleRouter.delete('/:id', async (req, res) => {
+articleRouter.delete('/articles/:id/edit', async (req, res) => {
 	try {
 		const foundArticle = await Article.findByIdAndDelete(req.params.id);
 
@@ -52,7 +51,7 @@ articleRouter.delete('/:id', async (req, res) => {
 
 //Update
 
-articleRouter.put('/:id', async (req, res) => {
+articleRouter.put('/articles/:id/edit', async (req, res) => {
 	try {
 		const foundArticle = await Article.findByIdAndUpdate(
 			req.params.id,

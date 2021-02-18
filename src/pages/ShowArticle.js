@@ -17,17 +17,17 @@ export default function Article(props) {
 	}, []);
 
 	return (
-		<div>
-			<h4>{article.author ? article.author : ''}</h4>
-			<h1>{article.title ? article.title : ''}</h1>
-			<p>{article.body ? article.body : ''}</p>
-			<Link to={`/${article._id}/edit`}>
-				<button>Agree</button>
-				<button>Disagree</button>
-			</Link>
-			<Link to={`/${article._id}/edit`}>
-				<button>Update this Article</button>
-			</Link>
+		<div className="ArticlePage">
+			<div className="ShowArticle">
+				<h4>{article.summary ? article.summary : ''}</h4>
+				<h2>{article.title ? article.title : ''}</h2> <br />
+				<p>{article.body ? article.body : ''}</p> <br />
+				<button>Boost</button> &nbsp;&nbsp;&nbsp;
+				<button>Bury</button> &nbsp;&nbsp;&nbsp;
+				<Link to={`/articles/${article._id}/edit`}>
+					<button>Edit this Article</button>
+				</Link>
+			</div>
 		</div>
 	);
 }

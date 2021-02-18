@@ -11,7 +11,7 @@ const routes = [
 	{
 		Component: ShowArticle,
 		key: 'ShowArticle',
-		path: '/:id'
+		path: '/articles/:id'
 	},
 	{
 		Component: About,
@@ -31,7 +31,7 @@ const routes = [
 	{
 		Component: Contributor,
 		key: 'contributors',
-		path: '/contributors'
+		path: '/contributors/:id'
 	},
 	{
 		Component: Home,

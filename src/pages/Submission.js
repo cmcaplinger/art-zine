@@ -1,16 +1,30 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Submission(props) {
 	const [articles, setArticles] = useState([]);
 	const titleInput = useRef(null);
 	const bodyInput = useRef(null);
-	const authorInput = useRef(null);
+	const summaryInput = useRef(null);
+
+	useEffect(() => {
+		//Immediately Invoked Function Expression  - IFFE!
+		(async () => {
+			try {
+				const response = await fetch('/api/articles');
+				const data = await response.json();
+				setArticles(data);
+			} catch (error) {
+				console.error(error);
+			}
+		})();
+	}, []);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 		const titleValue = titleInput.current.value;
 		const bodyValue = bodyInput.current.value;
-		const authorValue = authorInput.current.value;
+		const summaryValue = summaryInput.current.value;
 		try {
 			const response = await fetch('/api/articles', {
 				method: 'POST',
@@ -19,14 +33,16 @@ export default function Submission(props) {
 				},
 				body: JSON.stringify({
 					title: titleValue,
-					author: authorValue,
-					body: bodyValue
+					body: bodyValue,
+					summary: summaryValue
 				})
 			});
 			const data = await response.json();
 			setArticles([...articles, data]);
 		} catch (error) {
 			console.error(error);
+		} finally {
+			window.location.assign('/');
 		}
 	};
 
@@ -37,7 +53,7 @@ export default function Submission(props) {
 				onSubmit={handleSubmit}
 			>
 				Title: <input type="text" ref={titleInput} /> <br />
-				Author: <input type="text" ref={authorInput} /> <br />
+				Summary: <input type="text" ref={summaryInput} /> <br />
 				Body:{' '}
 				<textarea
 					rows="2"
@@ -47,7 +63,7 @@ export default function Submission(props) {
 					ref={bodyInput}
 				></textarea>
 				<br />
-				<input type="submit" value="Submit Article" />
+				<input type="submit" id="SubmitButton" value="Submit Article" />
 			</form>
 		</div>
 	);

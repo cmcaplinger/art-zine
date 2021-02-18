@@ -66,6 +66,10 @@ body {
         display: flex;
         flex-direction: column;
         padding: 40px;
+        a {
+          color: black;  
+        }
+        }
       }
       .TopArticle {
         border: 6px solid black;
@@ -139,9 +143,62 @@ body {
       height: 40vh;
       width: 80vw;
     }
+    #SubmitButton {
+      border: 3px solid black;
+      background-color: transparent; 
+    }
+    #SubmitButton:hover {
+      background-color: black;
+      color: white;
+    }
   }
-  
-}
+
+  .ArticlePage {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
+    margin: 50px;
+    justify-content: center;
+    text-align: left;
+    height: 75vh;
+    .ShowArticle {
+      flex-direction: column;
+      margin-right: 150px;
+      h2 {
+        color: black;
+      }
+      button {
+        border: 3px solid black;
+        background-color: transparent; 
+      }
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+  .UpdateArticlePage {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    justify-content: center;
+    height: 75vh;
+    #submission {
+      height: 40vh;
+      width: 80vw;
+    }
+    button, #SubmitButton {
+        border: 3px solid black;
+        background-color: transparent; 
+      }
+      button:hover, #SubmitButton:hover {
+        background-color: black;
+        color: white;
+      }
+  }
+
 
 .Footer {
   display: flex;

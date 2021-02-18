@@ -4,7 +4,7 @@ const articleSchema = new Schema(
 	{
 		title: String,
 		body: String,
-		author: [{ type: Schema.Types.ObjectId, ref: 'Author' }]
+		summary: String,
 	},
 	{
 		timestamps: true
