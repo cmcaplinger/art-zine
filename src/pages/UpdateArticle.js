@@ -8,9 +8,15 @@ export default function Article(props) {
 	});
 
 	const [didDelete, setDidDelete] = useState(false);
-	const titleInput = useRef(null);
-	const bodyInput = useRef(null);
-	const summaryInput = useRef(null);
+	// const titleInput = useRef(null);
+	// const bodyInput = useRef(null);
+	// const summaryInput = useRef(null);
+
+	// const [newArticle, setNewArticle] = useState({
+	// 	title: '',
+	// 	body: '',
+	// 	summary: ''
+	// });
 
 	useEffect(() => {
 		(async () => {
@@ -18,15 +24,41 @@ export default function Article(props) {
 				const response = await fetch(`/api/articles/${props.match.params.id}`);
 				const data = await response.json();
 				setArticle(data);
-			} catch (err) {
-				console.error(err);
+			} catch (error) {
+				console.error(error);
 			}
 		})();
 	}, [article, didDelete]);
 
+	// const handleChange = async e => {
+	// 	e.preventDefault();
+	// 	try {
+	// 		const response = await fetch(`/api/articles/${props.match.params.id}`, {
+	// 			method: 'PUT',
+	// 			headers: {
+	// 				'Content-Type': 'application/json'
+	// 			},
+	// 			body: JSON.stringify({
+	// 				title: titleInput.current.value,
+	// 				body: bodyInput.current.value,
+	// 				summary: summaryInput.current.value
+	// 			})
+	// 		});
+	// 		const data = await response.json();
+	// 		setArticle(data);
+	// 		window.location.assign('/');
+	// 	} catch (err) {
+	// 		console.error(err);
+	// 	}
+	// 	setNewArticle({
+	// 		...newArticle,
+	// 		[e.target.id]: e.target.value
+	// 	});
+	// };
+
 	const handleDelete = async e => {
 		try {
-			const response = await fetch(`/api/articles/${props.match.params.id}/`, {
+			const response = await fetch(`/api/articles/${props.match.params.id}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json'
@@ -34,41 +66,17 @@ export default function Article(props) {
 			});
 			const data = await response.json();
 			setDidDelete(!didDelete);
+			window.location.assign('/');
 		} catch (error) {
 			console.error(error);
-		} finally {
-			window.location.assign('/');
 		}
 	};
 
-	const handleSubmit = async e => {
-		e.preventDefault();
-		try {
-			const response = await fetch(
-				`/api/articles/${props.match.params.id}/edit`,
-				{
-					method: 'PUT',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
-						title: titleInput.current.value,
-						body: bodyInput.current.value,
-						summary: summaryInput.current.value
-					})
-				}
-			);
-			const data = await response.json();
-			setArticle(data);
-		} catch (err) {
-			console.error(err);
-		}
-	};
 	return (
 		<div className="UpdateArticlePage">
-			<form
+			{/* <form
 				style={{ display: 'flex', flexDirection: 'column' }}
-				onSubmit={handleSubmit}
+				onChange={handleChange}
 			>
 				Title:{' '}
 				<input type="text" ref={titleInput} defaultValue={article.title} />{' '}
@@ -80,7 +88,6 @@ export default function Article(props) {
 					defaultValue={article.summary}
 				/>{' '}
 				<br />
-				{/* Author: <input type="text" ref={authorInput} /> <br /> */}
 				Body:{' '}
 				<textarea
 					rows="2"
@@ -91,14 +98,8 @@ export default function Article(props) {
 					defaultValue={article.body}
 				></textarea>
 				<br />
-				<input
-					type="submit"
-					id="SubmitButton"
-					value="Edit Article"
-					onClick={handleSubmit}
-				/>{' '}
-				<br />
-			</form>
+				<input type="submit" id="SubmitButton" value="Edit Article" /> <br />
+			</form> */}
 			<button onClick={handleDelete}>Delete Article</button>
 		</div>
 	);

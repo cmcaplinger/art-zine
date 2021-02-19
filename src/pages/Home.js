@@ -36,15 +36,7 @@ export default function Home() {
 						);
 					})}
 				</div>
-				<div className="TopArticle">
-					<h4>Topic</h4>
-					<h4>Topic</h4>
-					<h4>Topic</h4>
-					<h4>Topic</h4>
-					<h4>Topic</h4>
-					<h4>Topic</h4>
-					<h4>Topic</h4>
-				</div>
+				<div className="TopArticle"></div>
 			</div>
 		</div>
 	);

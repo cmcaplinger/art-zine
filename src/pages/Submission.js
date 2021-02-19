@@ -39,10 +39,9 @@ export default function Submission(props) {
 			});
 			const data = await response.json();
 			setArticles([...articles, data]);
+			window.location.assign('/');
 		} catch (error) {
 			console.error(error);
-		} finally {
-			window.location.assign('/');
 		}
 	};
 

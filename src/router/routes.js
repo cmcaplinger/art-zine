@@ -6,12 +6,18 @@ import ShowArticle from '../pages/ShowArticle';
 import Submission from '../pages/Submission';
 import Home from '../pages/Home';
 import Contributor from '../pages/Contributor';
+import UpdateArticle from '../pages/UpdateArticle';
 
 const routes = [
 	{
 		Component: ShowArticle,
 		key: 'ShowArticle',
 		path: '/articles/:id'
+	},
+	{
+		Component: UpdateArticle,
+		key: 'UpdateArticle',
+		path: '/articles/:id/edit'
 	},
 	{
 		Component: About,
@@ -38,7 +44,6 @@ const routes = [
 		key: 'home',
 		path: '/'
 	}
-
 ];
 
 export default routes;
