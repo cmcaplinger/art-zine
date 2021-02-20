@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'development'){
   app.use(express.static('public'))
 }
 
-/* Controller Goes Here Remove the tes*/
+/* Controller Goes Here*/ 
 app.use('/api/articles', require('./controllers/articles'));
 
 /* Controller Ends here */
