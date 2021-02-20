@@ -8,7 +8,7 @@ const path = require('path');
 const MONGODB_URI = process.env.MONGODB_URI
 const db = mongoose.connection;
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect( 'MONGODB_URI=mongodb+srv://cmcaplinger:DWUZCwjhBC0U3JPF@cluster0.osejg.mongodb.net/project-art-zine?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
