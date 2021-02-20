@@ -13,7 +13,7 @@ body {
     font-family: 'Share Tech Mono', monospace;
     // height: 100%;
     width:100%;
-    animation: app-change 20s infinite;
+    animation: app-change 60s infinite;
 
 @keyframes app-change {
   0% { background-color: rgb(70, 192, 145); }
@@ -37,7 +37,7 @@ body {
   margin-bottom: 50px;
   a:link {
     text-decoration: none;
-    animation: color-change 20s infinite;
+    animation: color-change 60s infinite;
     @keyframes color-change {
       0% { color: rgb(70, 192, 145); }
       25% { color: rgb(179, 87, 207); }
@@ -54,7 +54,7 @@ body {
     color:black;
     text-align: center;
     flex-direction: column;
-    height: 200vh;
+    height: 90vh;
     .Articles{
       display: flex;
       flex-direction: row;
@@ -71,7 +71,7 @@ body {
         }
         }
       }
-      .TopArticle {
+      .Topics {
         border: 6px solid black;
         color: white;
         width: 30vw;
@@ -80,12 +80,6 @@ body {
         padding: 40px;
         text-align: center;
       }
-    }
-    #ImageHighlight {
-      margin: 40px;
-      background-image: url("/public/img/diego_rivera_sugarcane_1931.jpg");
-      background-size: cover;
-
     }
   }
   
@@ -215,7 +209,7 @@ body {
   color: white; 
 }
   a:hover {
-    animation: link-change 20s infinite;
+    animation: link-change 60s infinite;
     @keyframes link-change {
       0% { color: rgb(70, 192, 145); }
       25% { color: rgb(179, 87, 207); }

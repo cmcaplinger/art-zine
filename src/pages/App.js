@@ -9,7 +9,6 @@ import Submission from './Submission';
 import Contributor from './Contributor';
 import ShowArticle from './ShowArticle';
 import UpdateArticle from './UpdateArticle';
-import routes from '../router/routes';
 
 export default function App() {
 	return (

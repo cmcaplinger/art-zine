@@ -39,7 +39,7 @@ articleRouter.get('/:id', async (req, res) => {
 
 //Destroy
 
-articleRouter.delete('/articles/:id/edit', async (req, res) => {
+articleRouter.delete('/:id/edit', async (req, res) => {
 	try {
 		const foundArticle = await Article.findByIdAndDelete(req.params.id);
 
@@ -51,7 +51,7 @@ articleRouter.delete('/articles/:id/edit', async (req, res) => {
 
 //Update
 
-articleRouter.put('/articles/:id/edit', async (req, res) => {
+articleRouter.put('/:id/edit', async (req, res) => {
 	try {
 		const foundArticle = await Article.findByIdAndUpdate(
 			req.params.id,

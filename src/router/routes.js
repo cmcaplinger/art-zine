@@ -5,7 +5,6 @@ import Contact from '../pages/Contact';
 import ShowArticle from '../pages/ShowArticle';
 import Submission from '../pages/Submission';
 import Home from '../pages/Home';
-import Contributor from '../pages/Contributor';
 import UpdateArticle from '../pages/UpdateArticle';
 
 const routes = [
@@ -33,11 +32,6 @@ const routes = [
 		Component: Submission,
 		key: 'submissions',
 		path: '/submissions'
-	},
-	{
-		Component: Contributor,
-		key: 'contributors',
-		path: '/contributors/:id'
 	},
 	{
 		Component: Home,

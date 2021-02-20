@@ -24,7 +24,7 @@ export default function Home() {
 					{articles.map(article => {
 						return (
 							<ul>
-								<li>
+								<li key={article._id}>
 									<div key={article._id}>
 										<Link to={`/articles/${article._id}`}>
 											<h3>{article.title}</h3>
@@ -36,7 +36,9 @@ export default function Home() {
 						);
 					})}
 				</div>
-				<div className="TopArticle"></div>
+				<div className="Topics">
+					<img src="/img/8d0bd9cccbf81b4d89d44f92b7877062.jpg" />
+				</div>
 			</div>
 		</div>
 	);
