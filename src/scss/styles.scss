@@ -91,7 +91,7 @@ body {
     margin: 50px;
     justify-content: center;
     text-align: center;
-    height: 75vh;
+    height: 80vh;
   }
   
   .ContactPage{
@@ -102,27 +102,27 @@ body {
     margin: 50px;
     justify-content: center;
     text-align: center;
-    height: 75vh;
+    height: 80vh;
     a:link {
       color: white;
     }
     
   }
 
-  .ContributorPage {
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
-    font-family: 'Share Tech Mono', monospace;
-    color: white;
-    margin: 50px;
-    justify-content: center;
-    text-align: center;
-    height: 75vh;
-    #AuthorName {
-      color: white;
-    }
-  }
+  // .ContributorPage {
+  //   display: flex;
+  //   flex-direction: row;
+  //   font-size: 16px;
+  //   font-family: 'Share Tech Mono', monospace;
+  //   color: white;
+  //   margin: 50px;
+  //   justify-content: center;
+  //   text-align: center;
+  //   height: 75vh;
+  //   #AuthorName {
+  //     color: white;
+  //   }
+  // }
   
   .AppPage {
     display: flex;
@@ -132,7 +132,7 @@ body {
     display: flex;
     margin: 50px;
     justify-content: center;
-    height: 75vh;
+    height: 80vh;
     #submission {
       height: 40vh;
       width: 80vw;
@@ -179,7 +179,7 @@ body {
     flex-direction: column;
     margin: 50px;
     justify-content: center;
-    height: 75vh;
+    height: 80vh;
     #submission {
       height: 40vh;
       width: 80vw;
